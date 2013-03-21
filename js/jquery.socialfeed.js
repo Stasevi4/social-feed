@@ -49,8 +49,9 @@ if ( typeof Object.create !== 'function' ) {
         //This function performs consequent data loading from all of the sources by calling corresponding functions
         function getAllData(){
             if (options.fb_username != undefined) {
-                //Facebook requires an access_token for fetching the feed.
-                getFacebookData(options.fb_token);
+                //Facebook requires an access_token for fetching the feed.             
+               //getFacebookData(options.fb_token);
+               getFacebookData(JSON.parse($.cookie('socialfeed')).fb_token);             
             }
             if (options.tw_username != undefined) {
                 getTwitterData();
